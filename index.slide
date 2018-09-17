@@ -79,19 +79,19 @@ yvasiyarov@ozon.travel
 : в общем нужно быть ЕВАНГЕЛИСТОМ 
  
 
-* Что не очевидно
+* Что не очевидно для C# программиста
 .code slice.go
 - Программист ожидает что slice - это reference type и append, получив slice в качестве аргумента может его менять 
 .image boyarskii.jpg 
 
-* Что напрягает в Golang С# программистов
+* Что напрягает в Golang 
 .image golang_error_handling.png
 
 
-* Что нехватает в Golang
+* Чего не хватает в Golang
 .image golang_generics.jpg 600 _ 
 
-* Что нехватает в Golang
+* Чего не хватает в Golang
 - Нет тернарных операторов 
 - Нет enum 
 .image golang2.jpeg 500 _ 
