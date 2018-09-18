@@ -1,4 +1,6 @@
 
+//иногда работает 
+mutate_slice(slice)
 
-slice = append(slice, value)
-
+//работает всегда но выглядит крайне странно
+slice = mutate_slice(slice)

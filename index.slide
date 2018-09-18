@@ -41,8 +41,8 @@ yvasiyarov@ozon.travel
 : Так как C# язык со строгой типизацией - то этот хаос из зависимостей по крайней мере четко виден
 
 * C# монолит VS PHP монолит
-- В C# приложениях часто используют проприетарные или MS-defined кодировки/форматы данных 
-- В PHP приложениях чаще используются открытые форматы данных (хотя в семье не без урода, привет php sessions)
+- В C# приложениях часто используют проприетарные или MS-defined кодировки/форматы данных ([[Bond][https://microsoft.github.io/bond/why_bond.html]])
+- В PHP приложениях чаще используются открытые форматы данных (хотя в семье не без урода, вспомним php sessions)
 
 * C# монолит VS PHP монолит
 - В С# приложениях широко используются хранимые процедуры
@@ -77,22 +77,62 @@ yvasiyarov@ozon.travel
 
 * Переход с C# на Golang
 .image sharp.jpeg
+ 
+* Придется быть евангелистом Golang
+.image lit_nicky.png 500 _
 : главная сложность - убедить человека что в правильности того что ты предлагешь
 : убедить что технологии не от MS также могут быть весьма интересными
 : в общем нужно быть ЕВАНГЕЛИСТОМ 
- 
 
 * Что не очевидно для C# программиста
 .code slice.go
-- Программист ожидает что slice - это reference type и append, получив slice в качестве аргумента может его менять 
+ - C# программист(да и не только C#) ожидает что slice - это reference type
+
+* Slice изнутри
+.code slice_internals.go
+- slice это просто структура
+- все структуры это value type (в терминолигии C#)
 .image boyarskii.jpg 
+ 
+* Что насчет map[] ?
+.code map_internals.go
 
-* Что напрягает в Golang 
+* map[] - структура ????
+.image map_meme.jpg 
+: sizeof(hmap) = 28 bytes
+
+* Скорее указатель на структуру
+.code map_internals2.go
+[[https://golang.org/src/runtime/map.go][https://golang.org/src/runtime/map.go]]
+[[https://golang.org/src/runtime/map_fast32.go][https://golang.org/src/runtime/map_fast32.go]] 
+[[https://golang.org/src/runtime/map_fast64.go][https://golang.org/src/runtime/map_fast64.go]] 
+
+* Что насчет channel ?
+.code channel.go
+[[https://golang.org/src/runtime/chan.go][https://golang.org/src/runtime/chan.go]]
+
+* Подключаемся к MS SQL
+**[[https://github.com/denisenkom/go-mssqldb]] 
+- Написана на Golang
+- Но не поддерживает возвращаемые параметры(output params)
+
+**[[https://github.com/minus5/gofreetds]]
+-Требует FreeTDS библиотеку
+-Падает если входные параметры процедуры имееют тип alias
+
+.image This_is_Fine_Gopher.png 300 _
+
+* gRPC C#
+**[[https://github.com/grpc/grpc/tree/master/src/csharp]] 
+- как-то работает
+- написана явно не C# программистами 
+
+* Что еще напрягает в Golang 
 .image golang_error_handling.png
-
 
 * Чего не хватает в Golang
 .image golang_generics.jpg 600 _ 
+
 
 * Чего не хватает в Golang
 - Нет тернарных операторов 
