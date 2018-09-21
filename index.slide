@@ -3,7 +3,7 @@
 23 Sep 2018
 Tags: meetup, go, C#, legacy, php
 
-Юрий Васияров
+Васияров Юрий
 CTO, Ozon.Travel
 yvasiyarov@ozon.travel
 
@@ -21,8 +21,9 @@ yvasiyarov@ozon.travel
 
 * 2018-настоящее время, CTO Ozon.Travel
 - изначально написан на C#
-- самый популярный OTA в России (Данные Wordstat)
-- до 30 000rpm 
+- самый популярный продавец авиа/жд билетов в России (Данные Wordstat и Euromonitor)
+- надежный (9 лет на рынке)
+- Нагрузка не как в Lazada, но тоже заставляет думать(30 000rpm) 
 .image ozontravel_logo.png 200 _
 
 * Почему именно Golang ?
