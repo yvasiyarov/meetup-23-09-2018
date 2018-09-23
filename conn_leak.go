@@ -7,5 +7,6 @@ for rows.Next() {
        return err
     }
     rows2, _ := db.Query("SELECT order_id, total  FROM order WHERE user_id = ?", id)
+    defer rows2.Close()
     doSomeProcessing()
 }
